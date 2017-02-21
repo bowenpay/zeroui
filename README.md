@@ -14,7 +14,7 @@ ZeroUI零分贝的手机前端样式库, 类似于WeUI。
 
 ## 视觉标准
 
-[WeUI-Sketch](https://github.com/bowenpay/zeroui-sketch)
+[ZeroUI-Sketch](https://github.com/bowenpay/zeroui-sketch)
 
 ## 手机预览
 
