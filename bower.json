@@ -1,0 +1,21 @@
+{
+    "name": "zeroui",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bowenpay/zeroui.git"
+    },
+    "description": "lingfenbei mobile ui",
+    "main": "dist/style/zeroui.css",
+    "version": "0.4.3",
+    "authors": [
+        "jingping yi"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "lingfenbei",
+        "mobile",
+        "ui"
+    ],
+    "homepage": "https://github.com/bowenpay/zeroui",
+    "ignore": []
+}

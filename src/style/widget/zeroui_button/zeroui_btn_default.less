@@ -1,0 +1,14 @@
+@import "../../base/fn";
+
+.zeroui_btn_default {
+    background-color: @zerouiBtnDefaultBg;  // 默认背景色白色
+    color: @zerouiBtnDefaultFontColor;      // 默认前景色绿色
+    // not(.zeroui_btn_disabled) 是为了在button禁用时, 没有下面的效果
+    &:not(.zeroui_btn_disabled):visited {   // 访问过后,前景色不变
+        color: @zerouiBtnDefaultFontColor;
+    }
+    &:not(.zeroui_btn_disabled):active {    // 当被按下按住的时候, 白色背景并暗, 黑色前景色变灰, 给用户一个反馈
+        color: @zerouiBtnDefaultActiveFontColor;
+        background-color: @zerouiBtnDefaultActiveBg;
+    }
+}

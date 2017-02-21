@@ -1,0 +1,75 @@
+@import "../../base/fn";
+
+
+/* 组织结构规则是
+zeroui_cells_title
+zeroui_cells
+    zeroui_cell
+        zeroui_cell_hd zeroui_cell_bd zeroui_cell_ft
+    zeroui_cell
+        ...
+
+*/
+
+.zeroui_cell {
+    // onepx
+    position: relative;
+    &:before {
+        .setTopLine(@zerouiCellBorderColor);   // 设置顶部的一条线条,就可以了, 层叠在一起,看起来就都有上下2条分割线
+        left: @zerouiCellGapH;                 // 对齐
+    }
+    &:first-child {         // zeroui_cells中有top和bottom 2条线, 为了不重叠, 第1条线不绘制
+        &:before {
+            display: none;
+        }
+    }
+}
+
+/* cell组 */
+.zeroui_cells {
+    margin-top: @zerouiCellsMarginTop;     // 使用margin-top保证组与组之间保持一定的间距
+    background-color: @zerouiCellBg;       // 背景色是白色
+    line-height: @zerouiCellLineHeight;    // 设置合适的line-height,保证内部元素垂直居中
+    font-size: @zerouiCellFontSize; //cell中间有效高度23px=17px*line-height，跟客户端默认图标尺寸一致
+
+    overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
+
+    // onepx ,  设置上下cells组分割线
+    position: relative;
+    &:before {
+        .setTopLine(@zerouiCellBorderColor);
+    }
+    &:after {
+        .setBottomLine(@zerouiCellBorderColor);
+    }
+}
+
+/* cell组前面的title */
+.zeroui_cells_title {
+    margin-top: .77em; // 15px - 行高  ,距离上面 稍微大一些,下面小一些, 比较容易分清和那个cells是一组
+    margin-bottom: .3em; // 8px - 行高
+    padding-left: @zerouiCellGapH;        // 与cells组左右内边距一致, 对齐好看
+    padding-right: @zerouiCellGapH;
+    color: @globalTextColor;
+    font-size: @zerouiCellTipsFontSize;
+
+    & + .zeroui_cells {   // 紧接相邻的cells, margin-top设为0
+        margin-top: 0;
+    }
+}
+
+.zeroui_cell {
+    padding: @zerouiCellGapV @zerouiCellGapH;
+    position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
+    display: flex;          // cell是用flex布局做的
+    align-items: center;
+}
+
+.zeroui_cell_ft {
+    text-align: right;      // 靠右, 有多长显示多长
+    color: @globalTextColor;
+}
+
+.zeroui_cell_primary {
+    flex: 1;       // .zeroui_cell_bd.zeroui_cell_primary 表示占满剩余空间
+}

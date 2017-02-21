@@ -1,0 +1,31 @@
+//  限制长度
+.ellipsis(@w:auto) {
+    width: @w;          // 固定宽度
+    overflow: hidden;   // 超出隐藏
+    text-overflow: ellipsis;  // 超出使用...
+    white-space: nowrap;    // 文本不换行
+    word-wrap: normal;      // 只在允许的断字点换行（浏览器保持默认处理）
+}
+
+// 限制行数
+.ellipsisLn(@line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    // -webkit-box 和 flex 是一样的。
+    // display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    // display: -moz-box; /* Firefox 17- */
+    // display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    // display: -moz-flex; /* Firefox 18+ */
+    // display: -ms-flexbox; /* IE 10 */
+    // display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+    display: -webkit-box;
+    -webkit-box-orient: vertical; // 内部段落垂直分布
+    -webkit-line-clamp: @line;  // 限制行数
+}
+
+// 允许断句
+.text_wrap() {
+    word-wrap:break-word;   // 允许浏览器在单词内进行断句
+    word-break:break-all;   // 标明怎么样进行单词内的断句
+}

@@ -1,0 +1,32 @@
+/* 全局使用的函数 */
+
+// tapcolor
+.setTapColor(@c:rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: @c;  // 用户tap触摸后,显示的高亮色。 常用语按钮、行、链接、导航等
+}
+
+
+//user action
+/*
+这个属性，用来控制内容的可选择性。
+这个功能,在本项目中都没有调用。
+
+在之前是被用来保护网站的内容，不被用户复制和转载，从而保护资讯的版权，但是这样却对普通用户的用户体验造成了伤害，
+而且，并不能真正的保护页面中的内容，这对前端开发人员来说，很容易搞定。
+现在，HTML5蒸蒸日上，很多网站或者web app会使用到Drag and Drop技术，user-select正好在一些情境中可以用到。
+*/
+.no_select() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+
+
+
+

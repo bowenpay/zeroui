@@ -1,0 +1,91 @@
+@import "../../base/fn";
+
+@zerouiDialogBackgroundColor: #FAFAFC;
+@zerouiDialogLineColor: #D5D5D6;
+@zerouiDialogLinkColor: #3CC51F;
+@zerouiDialogTitleColor: #3CC51F;
+@zerouiDialogDescColor: #D5D5D6;
+@zerouiDialogLinkActiveBc: #EEEEEE;
+
+.zeroui_dialog {
+    position: fixed;        // 使用绝对定位
+    z-index: 5000;          //  确保位于屏幕最顶端
+    width: 85%;
+    top: 50%;               // 这3行保证居中
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: @zerouiDialogBackgroundColor;   // 白色背景, 居中, 圆角
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    .zeroui_dialog_confirm & {            // 确认框
+        .zeroui_dialog_hd {
+            padding: 1.2em 20px .5em;
+        }
+        .zeroui_dialog_bd {               // 提示消息, 靠左对齐
+            text-align: left;
+        }
+    }
+}
+
+.zeroui_dialog_hd {                   // 标题居中, padding 略大,且 上面的padding大于下面的, 看着比较舒服
+    padding: 1.2em 0 .5em;
+}
+
+.zeroui_dialog_title {                 // 标题加粗加大
+    font-weight: 400;
+    font-size: 17px;
+    color: @zerouiDialogTitleColor;
+}
+
+.zeroui_dialog_bd {                   // padding 和文字都 略小一些
+    padding: 0 20px;
+    font-size: 15px;
+    color: @globalTextColor;        // 文字是灰色, 表示不怎么重要
+    word-wrap: break-word;          // 换行
+    word-break: break-all;
+}
+
+.zeroui_dialog_ft {                   // footer
+    position: relative;
+    margin: 20px 15px 20px;
+}
+
+.zeroui_btn_dialog {              // default 和 primary 2 中类型的按钮颜色不同, 起引导作用
+    &.default {
+        width: 40%;
+    }
+    &.primary {
+        width: 40%;
+    }
+}
+
+.zeroui_dialog_ft_desc {                   // footer
+    position: relative;
+    margin: -20px 15px 20px;
+}
+.zeroui_dialog_ft_desc {                   // footer
+    color: @zerouiDialogDescColor;
+    .default_desc {
+        display: inline-block;
+        width: 40%;
+        margin-left: 5px;
+        text-align: center;
+        vertical-align: top;
+
+    }
+    .primary_desc {
+        display: inline-block;
+        width: 40%;
+        margin-left: 10px;
+        text-align: center;
+        vertical-align: top;
+    }
+}
+
+@media screen and (min-width: 1024px) {         // 如果屏幕过大, 应该保证dialog小一些,否则看着很怪。
+    .zeroui_dialog {
+        width: 35%;
+    }
+}

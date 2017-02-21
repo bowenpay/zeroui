@@ -1,0 +1,42 @@
+@import "../../base/fn";
+
+.zeroui_btn {
+    position: relative;  // 相对定位
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 14px; // 内部间距14px
+    padding-right: 14px;
+    box-sizing: border-box;
+
+    font-size: @zerouiBtnFontSize; // 按钮字体18px,比body的14px大一些,显得比较突出
+    text-align: center;          // 文字居中,如果是a标签,不要text-decoration
+    text-decoration: none;
+    color: @zerouiBtnFontColor;
+    line-height: unit(@zerouiBtnHeight/@zerouiBtnFontSize); // 看起来要与按钮一样高, 才显得垂直居中
+    border-radius: @zerouiBtnBorderRadius;                // 5px的圆角
+
+    .setTapColor();
+    overflow: hidden;
+    &:after {                                           // 给按钮套一层边框, 增加立体效果。  TODO: 为什么不直接用border呢?
+        content: " ";
+
+        width: 200%;                                    // 和生成1px的线,用的相同的伎俩。 先设置2倍大小,然后再scale到一半
+        height: 200%;
+        position: absolute;
+        border-radius: @zerouiBtnBorderRadius*2;
+        border: 1px solid rgba(0, 0, 0, .2);
+        transform: scale(.5);
+        transform-origin: 0 0;
+
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    &.zeroui_btn_inline {
+        display: inline-block;
+    }
+}

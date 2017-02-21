@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.zeroui_btn_primary {
+    background-color: @zerouiBtnPrimaryBg;  // 背景绿色, 前景色默认也是白色, 在zeroui_btn_global已经定义过了
+    &:not(.zeroui_btn_disabled):visited {
+        color: @zerouiBtnFontColor;         // 前景色是白色字体, 不变
+    }
+    &:not(.zeroui_btn_disabled):active {    // 按下时, 背景色和字体都变暗
+        color: @zerouiBtnActiveFontColor;
+        background-color: @zerouiBtnPrimaryActiveBg;
+    }
+}

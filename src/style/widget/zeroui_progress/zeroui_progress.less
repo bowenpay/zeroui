@@ -1,0 +1,101 @@
+@import "../../base/fn";
+/* 进度条 布局
+zeroui_progress
+    zeroui_progress_bar
+        zeroui_progress_inner_bar
+    zeroui_progress_opr
+
+ */
+.zeroui_progress {    // 使用flex实现进度条
+    display: flex;
+    align-items: center;
+}
+
+.zeroui_progress_bar {    // 进度条背景, 占满出opr的整行
+    background-color: @zerouiProgressBg;
+    height: @zerouiProgressHeight;
+    border-radius: @zerouiProgressBorderRadius;
+    flex: 1;
+}
+
+.zeroui_progress_inner_bar {      // 绿色的进度条, 使用width的百分比表示当前精度
+    float:left;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 0;
+    height: 100%;
+    text-align: right;
+    &.primary{                  // bar 上的颜色
+        background-color: @zerouiProgressPrimaryColor;
+    }
+    &.warn{
+        background-color: @zerouiProgressWarnColor;
+    }
+    &.default{
+        background-color: @zerouiProgressDefaultColor;
+    }
+    span {                          // bar上的文字
+        font-size: 12px;
+        line-height: @zerouiProgressBarLineHeight;
+        margin-right: 5px;
+        color: @zerouiProgressBarFontColor;
+    }
+
+}
+.zeroui_progress_inner_bar:first-child{
+    border-top-left-radius: @zerouiProgressBorderRadius;
+    border-bottom-left-radius: @zerouiProgressBorderRadius;
+}
+.zeroui_progress_inner_bar:last-child{
+    border-top-right-radius: @zerouiProgressBorderRadius;
+    border-bottom-right-radius: @zerouiProgressBorderRadius;
+}
+
+.zeroui_progress_bar {
+    position: relative;
+    &.zeroui_progress_bar_with_desc {   // 有desc的bar上边距大一些
+        margin-top: 40px;
+    }
+    .zeroui_progress_outer_desc {
+        position: absolute;
+        float:left;
+        top: -40px;
+        margin-left: -15px;
+        background-color: @zerouiProgressOuterDescBg;
+        border-radius: 30px;
+        height: 30px;
+
+        img {
+            float: left;
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            margin: 3px 3px;
+        }
+        span {
+            float: left;
+            display: block;
+            color: white;
+            height: 30px;
+            line-height: 2.1;
+            margin: 0 10px 0 2px;
+        }
+        &:after{
+            content:" ";
+            position: absolute;
+            top: 36px;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left-color: @zerouiProgressOuterDescBg;
+            transform: rotate(90deg) scaleX(2.5);
+        }
+    }
+    .zeroui_progress_inner_bar{ // 修正lastchild不生效的问题
+        &.last{
+            border-top-right-radius: @zerouiProgressBorderRadius;
+            border-bottom-right-radius: @zerouiProgressBorderRadius;
+        }
+    }
+}

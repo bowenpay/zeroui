@@ -1,0 +1,30 @@
+@import "fn";
+
+html {
+  /*
+   * iPhone 和 Android 的浏览器纵向 (Portrate mode) 和橫向 (Landscape mode) 模式皆有自动调整字体大小的功能。
+   * 控制它的就是 CSS 中的 -webkit-text-size-adjust。
+   * text-size-adjust 设为 none 或者 100% 关闭字体大小自动调整功能.
+   * 之所以不使用 none 而是 100% 的原因是: none相当于禁用,则在手动放大页面时, 字体大小也不会改变。
+   */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.6;       // 1.6 看起来比较舒适
+  font-family: @sansFont; // TODO: 为什么选择这些字体呢?
+}
+
+* {
+  margin: 0;              // 性能有点低,其实现在更常用的是使用Normalize.css
+  padding: 0;
+}
+
+a img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;   // 防止链接自动加下划线、点击后变色等
+}

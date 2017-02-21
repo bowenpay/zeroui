@@ -1,0 +1,43 @@
+@import "../../../base/fn";
+
+.zeroui_cell_label{                // label 固定宽度, 超出文字自动缩略
+    display:block;
+    width:@zerouiCellLabelWidth;
+    .text_wrap();
+}
+.zeroui_cell_input {
+    width: 100%;            // 输入框占满整行
+    border: 0;              // 去掉边框效果,看起来比较整洁
+    outline: 0;             // 去掉外框
+    -webkit-appearance: none;   // 禁用原生效果
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: unit(@zerouiCellLineHeight, em); //  看起来居中
+    line-height: @zerouiCellLineHeight;
+
+    // hides the spin-button
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{             // spin-button 是浏览器给input框加上的原生样式,如`type=number`会加上上下加减按钮, 我们需要禁用。
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+
+.zeroui_cells_form {
+    input, textarea, label[for]{        // 高亮色是白色,和背景色相同,相当于没有效果
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.zeroui_submit_outer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 62px;
+    background-color: #eeeeee;
+    .zeroui_submit_inner {
+        margin: 10px 15px;
+    }
+}

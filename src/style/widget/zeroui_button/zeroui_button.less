@@ -1,0 +1,58 @@
+@import "../../base/fn";
+// 存在样式优先级的问题，故这里对其他zeroui_btn的引用放在底部
+// 主要是button.zeroui_btn在zeroui_btn_plain下重写border-width
+
+.zeroui_btn {
+  &.zeroui_btn_mini {
+    line-height: @zerouiBtnMiniHeight;
+    font-size: @zerouiBtnMiniFontSize;
+    padding: 0 .75em;
+    display: inline-block;
+  }
+}
+
+button, input {
+  &.zeroui_btn {
+    width: 100%;                // 按钮默认占满父元素
+    border-width: 0;
+    outline: 0;
+    -webkit-appearance: none;   // 禁用原生样式
+    &:focus {
+      outline: 0;             // 选中时不要加outline
+    }
+  }
+  &.zeroui_btn_inline,&.zeroui_btn_mini {
+    width: auto;                // inline、mini的button宽度随文字宽度变动
+  }
+}
+
+/*gap between btn*/
+.zeroui_btn + .zeroui_btn {
+  margin-top: @zerouiBtnDefaultGap; // 相邻的button,在垂直上保持一定间距
+}
+
+.zeroui_btn.zeroui_btn_inline + .zeroui_btn.zeroui_btn_inline { // 相邻的inline、mini的button,在水平上保持一定间距
+  margin-top: auto;
+  margin-left: @zerouiBtnDefaultGap;
+}
+
+.zeroui_btn_area {
+  margin: @zerouiCellsMarginTop @zerouiBtnDefaultGap .3em;    // button area 要距离其它部分稍微远一点,看起来比较舒服
+  &.zeroui_btn_area_inline {
+    display: flex;                                      // area inline 采用flex布局
+    .zeroui_btn {
+      margin-top: auto;
+      margin-right: @zerouiBtnDefaultGap;               // 按钮之间保证一点间距
+      width: 100%;
+      flex: 1;                                        // 按钮大小一样
+      &:last-child {
+        margin-right: 0;                            // 消除最后一个button的右间距, 保证所有button看起来居中
+      }
+    }
+  }
+}
+
+@import "zeroui_btn_global";
+@import "zeroui_btn_default";
+@import "zeroui_btn_primary";
+@import "zeroui_btn_disabled";

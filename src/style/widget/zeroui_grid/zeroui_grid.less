@@ -1,0 +1,83 @@
+@import "../../base/fn";
+
+/* 网格布局
+zeroui_grids
+    zeroui_grid
+        zeroui_grid_icon
+        zeroui_grid_label
+    zeroui_grid
+    ...
+
+*/
+.zeroui_grids {
+    position: relative;
+    overflow: hidden;
+
+    &:before {      // grids的上边框
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0;
+        border: 1px solid @zerouiGridBorderColor;
+        transform-origin: 0 0;
+        transform: scale(.5);
+    }
+}
+
+.zeroui_grid {
+    position: relative;
+    float: left;                // float布局, 保证可以放置不定数量个
+    padding: 20px 10px;         // 保证合适的内间距,看起来比较整齐
+    width: 100% / @zerouiGridColumnCount;     // 平分宽度
+    box-sizing: border-box;
+
+    &:before {                 // 每个grid的 下边框 和 右边框
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0;
+        border-bottom: 1px solid @zerouiGridBorderColor;
+        border-right: 1px solid @zerouiGridBorderColor;
+        transform-origin: 0 0;
+        transform: scale(.5);
+    }
+
+    &:nth-child(3n) {       // 最右边的一列grid没有右边框
+        &:before {
+            border-right-width: 0;
+        }
+    }
+
+    &:active {              // 按下时背景变暗, 让用户感知到点击
+        background-color: @itemActiveColor;
+    }
+}
+
+.zeroui_grid_icon {                   // icon 固定宽度, 水平居中
+    width: @zerouiGridIconSize;
+    height: @zerouiGridIconSize;
+    margin: 0 auto;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    & + .zeroui_grid_label {         // label 与icon保证一定的距离
+        margin-top: 5px;
+    }
+}
+
+.zeroui_grid_label {                  // 定义label:文字居中,字体大小和颜色
+    display: block;
+    text-align: center;
+    color: @globalTitleColor;
+    font-size: @zerouiGridFontSize;
+}
