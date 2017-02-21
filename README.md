@@ -10,7 +10,7 @@ ZeroUI零分贝的手机前端样式库, 类似于WeUI。
 包含`button`、`cell`、`dialog`、 `progress`、`icon`等各式元素。
 
 ## ZeroUI名称的由来
-零分贝的第一个字零英文是zero, 所以取名zeroui。
+零分贝的第一个字零英文是zero, 所以取名ZeroUI。
 
 ## 视觉标准
 
@@ -20,9 +20,9 @@ ZeroUI零分贝的手机前端样式库, 类似于WeUI。
 
 请用微信扫码
 
-![https://zeroui.github.io](https://cloud.githubusercontent.com/assets/4652816/15662614/178efd46-2725-11e6-8952-09d7836e968d.png)
+![https://bowenpay.github.io/zeroui/](https://cloud.githubusercontent.com/assets/2122123/23159356/6fba2ea0-f85d-11e6-9f58-c2a8a94dcb46.png)
 
-[https://zeroui.github.io](https://zeroui.github.io)
+[https://bowenpay.github.io/zeroui/](https://bowenpay.github.io/zeroui/)
 
 ## 文档
 
