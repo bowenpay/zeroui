@@ -16,7 +16,7 @@ zeroui_cells
     position: relative;
     &:before {
         .setTopLine(@zerouiCellBorderColor);   // 设置顶部的一条线条,就可以了, 层叠在一起,看起来就都有上下2条分割线
-        left: @zerouiCellGapH;                 // 对齐
+        left: 0;                 // 对齐
     }
     &:first-child {         // zeroui_cells中有top和bottom 2条线, 为了不重叠, 第1条线不绘制
         &:before {

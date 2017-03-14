@@ -1,0 +1,15 @@
+@import "../../base/fn";
+
+
+.zeroui_btn_square {
+
+    border-radius: @zerouiBtnSquareBorderRadius;                // 5px的圆角
+
+    &:after {                                           // 给按钮套一层边框, 增加立体效果。
+        border-radius: @zerouiBtnSquareBorderRadius*2;
+    }
+
+    &.zeroui_btn_inline {
+        display: inline-block;
+    }
+}
