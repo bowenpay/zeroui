@@ -1,0 +1,33 @@
+@import "../../base/fn";
+
+/* 网格布局
+zeroui_nav
+    zeroui_nav_back
+    zeroui_nav_title
+    zeroui_nav_more
+    ...
+
+*/
+.zeroui_nav {
+    position: relative;
+    width: 100%;
+    height: @zerouiNavHeight;
+    line-height: @zerouiNavHeight;
+    color: @zerouiNavColor;
+    background: @zerouiNavBg;
+    .zeroui_nav_back {
+        position: absolute;
+        left: 0; top:0;
+        padding-left: @zerouiNavIndent;
+    }
+
+    .zeroui_nav_title {
+        text-align: center;
+    }
+    .zeroui_nav_more {
+        position: absolute;
+        right: 0; top: 0;
+        padding-right: @zerouiNavIndent;
+    }
+}
+
