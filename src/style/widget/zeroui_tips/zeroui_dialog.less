@@ -47,6 +47,37 @@
     word-break: break-all;
 }
 
+.zeroui_dialog_bd .long_content{
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+@media (max-width: 375px){
+    .zeroui_dialog_bd .long_content{
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 320px){
+    .zeroui_dialog_bd .long_content{
+        max-height: 240px;
+    }
+}
+
+.woolen_glass{
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0), white);
+        background: -webkit-linear-gradient(to bottom, rgba(255,255,255,0), white);
+    }
+}
+
 .zeroui_dialog_ft {                   // footer
     position: relative;
     margin: 20px 15px 20px;
