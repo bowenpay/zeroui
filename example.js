@@ -79,6 +79,10 @@ $(function () {
                 $('#dialog2').show().on('click', '.zeroui_btn_dialog', function () {
                     $('#dialog2').off('click').hide();
                 });
+            }).on('click', '#showDialog3', function () {
+                $('#dialog3').show().on('click', '.zeroui_btn_dialog', function () {
+                    $('#dialog3').off('click').hide();
+                });
             });
 
         }

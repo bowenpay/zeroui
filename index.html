@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>WeUI</title>
-    <link rel="stylesheet" href="./zeroui.css"/>
+    <link rel="stylesheet" href="../style/zeroui.css"/>
     <link rel="stylesheet" href="./example.css"/>
 </head>
 <body ontouchstart>
@@ -32,14 +32,14 @@
                 Cell
             </p>
         </a>
-        <!--<a href="#/toast" class="zeroui_grid">-->
-            <!--<div class="zeroui_grid_icon">-->
-                <!--<i class="icon icon_toast"></i>-->
-            <!--</div>-->
-            <!--<p class="zeroui_grid_label">-->
-                <!--Toast-->
-            <!--</p>-->
-        <!--</a>-->
+        <a href="#/toast" class="zeroui_grid">
+            <div class="zeroui_grid_icon">
+                <i class="icon icon_toast"></i>
+            </div>
+            <p class="zeroui_grid_label">
+                Toast
+            </p>
+        </a>
         <a href="#/dialog" class="zeroui_grid">
             <div class="zeroui_grid_icon">
                 <i class="icon icon_dialog"></i>
@@ -129,6 +129,12 @@
         <a href="javascript:;" class="zeroui_btn zeroui_btn_mini zeroui_btn_default">按钮</a>
     </div>
     <div class="button_sp_area">
+        <a href="javascript:;" class="zeroui_btn zeroui_btn_mini zeroui_btn_primary zeroui_btn_square">按钮</a>
+        <a href="javascript:;" class="zeroui_btn zeroui_btn_mini zeroui_btn_default zeroui_btn_square">按钮</a>
+        <a href="javascript:;" class="zeroui_btn zeroui_btn_mini zeroui_btn_disabled zeroui_btn_default zeroui_btn_square">按钮</a>
+
+    </div>
+    <div class="button_sp_area">
         <a href="javascript:;" class="zeroui_btn zeroui_btn_mini zeroui_btn_primary">
             <i class="zeroui_icon_search"></i>按钮
         </a>
@@ -158,7 +164,25 @@
             <div class="zeroui_cell_ft">说明文字</div>
         </div>
     </div>
-
+    <div class="zeroui_cells_title">可跳转的列表项</div>
+    <div class="zeroui_cells zeroui_cells_access">
+        <a class="zeroui_cell" href="javascript:;">
+            <div class="zeroui_cell_bd zeroui_cell_primary">
+                <p>标题文字</p>
+            </div>
+            <div class="zeroui_cell_ft">
+                跳转提示
+            </div>
+        </a>
+        <a class="zeroui_cell" href="javascript:;">
+            <div class="zeroui_cell_bd zeroui_cell_primary">
+                <p>标题文字</p>
+            </div>
+            <div class="zeroui_cell_ft">
+                跳转提示
+            </div>
+        </a>
+    </div>
     <div class="zeroui_cells_title">表单</div>
     <div class="zeroui_cells zeroui_cells_form">
         <div class="zeroui_cell">
@@ -189,21 +213,20 @@
     <h1 class="page_title">Toast</h1>
 </div>
 <div class="bd spacing">
-    <a href="javascript:;" class="weui_btn weui_btn_primary" id="showToast">点击弹出Toast</a>
-    <a href="javascript:;" class="weui_btn weui_btn_primary" id="showLoadingToast">点击弹出Loading Toast</a>
+    <a href="javascript:;" class="zeroui_btn zeroui_btn_primary" id="showToast">点击弹出Toast</a>
+    <!--<a href="javascript:;" class="zeroui_btn zeroui_btn_primary" id="showLoadingToast">点击弹出Loading Toast</a>-->
 </div>
 <!--BEGIN toast-->
 <div id="toast" style="display: none;">
-    <div class="weui_mask_transparent"></div>
-    <div class="weui_toast">
-        <i class="weui_icon_toast"></i>
-        <p class="weui_toast_content">已完成</p>
+    <div class="zeroui_mask_transparent"></div>
+    <div class="zeroui_toast">
+        <p class="zeroui_toast_content">已完成</p>
     </div>
 </div>
 <!--end toast-->
 
 <!-- loading toast -->
-<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+<div id="loadingToast" class="zeroui_loading_toast" style="display:none;">
     <div class="weui_mask_transparent"></div>
     <div class="weui_toast">
         <div class="weui_loading">
@@ -213,14 +236,14 @@
             <div class="weui_loading_leaf weui_loading_leaf_3"></div>
             <div class="weui_loading_leaf weui_loading_leaf_4"></div>
             <div class="weui_loading_leaf weui_loading_leaf_5"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_6"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_7"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_8"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_9"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_10"></div>
+            <div class="zeroui_loading_leaf zeroui_loading_leaf_11"></div>
         </div>
-        <p class="weui_toast_content">数据加载中</p>
+        <p class="zeroui_toast_content">数据加载中</p>
     </div>
 </div>
 </script>
@@ -231,6 +254,7 @@
 <div class="bd spacing">
     <a href="javascript:;" class="zeroui_btn zeroui_btn_primary" id="showDialog1">点击弹出Dialog样式一</a>
     <a href="javascript:;" class="zeroui_btn zeroui_btn_primary" id="showDialog2">点击弹出Dialog样式二</a>
+    <a href="javascript:;" class="zeroui_btn zeroui_btn_primary" id="showDialog3">点击弹出Dialog样式三</a>
 </div>
 <!--BEGIN dialog1-->
 <div class="zeroui_dialog_confirm" id="dialog1" style="display: none;">
@@ -245,6 +269,7 @@
     </div>
 </div>
 <!--END dialog1-->
+
 <!--BEGIN dialog2-->
 <div class="zeroui_dialog_alert" id="dialog2" style="display: none;">
     <div class="zeroui_mask"></div>
@@ -261,6 +286,98 @@
     </div>
 </div>
 <!--END dialog2-->
+
+<!--BEGIN dialog3-->
+<div class="zeroui_dialog_alert" id="dialog3" style="display: none;">
+    <div class="zeroui_mask"></div>
+    <div class="zeroui_dialog">
+        <div class="zeroui_dialog_hd"><strong class="zeroui_dialog_title">我等候你</strong></div>
+        <div class="zeroui_dialog_bd">
+            <div class="long_content">
+                我望着户外的昏黄<br>
+                如同望着将来<br>
+                我的心震盲了我的听<br>
+                你怎还不来？
+                希望在每一秒钟上允许开花<br>
+                我守候着你的步履<br>
+                你的笑语，你的脸<br>
+                你的柔软的发丝<br>
+                守候着你的一切<br>
+                希望在每一秒钟上<br>
+            　　枯死──你在哪里？<br>
+            　　我要你，要得我心里生痛，<br>
+            　　我要你火焰似的笑，<br>
+            　　要你灵活的腰身，<br>
+            　　你的发上眼角的飞星；<br>
+            　　我陷落在迷醉的氛围中，<br>
+            　　像一座岛，<br>
+            　　在蟒绿的海涛间，不自主的在浮沉……<br>
+            　　喔，我迫切的想望<br>
+            　　你的来临，想望<br>
+            　　那一朵神奇的优昙<br>
+            　　开上时间的顶尖！<br>
+            　　你为什么不来，忍心的！<br>
+            　　你明知道，我知道你知道，<br>
+            　　你这不来于我是致命的一击，<br>
+            　　打死我生命中乍放的阳春，<br>
+            　　教坚实如矿里的铁的黑暗，<br>
+            　　压迫我的思想与呼吸；<br>
+            　　打死可怜的希冀的嫩芽，<br>
+            　　把我，囚犯似的，交付给<br>
+            　　妒与愁苦，生的羞惭<br>
+            　　与绝望的惨酷。<br>
+            　　这也许是痴。竟许是痴。<br>
+            　　我信我确然是痴；<br>
+            　　但我不能转拨一支已然定向的舵，<br>
+            　　万方的风息都不容许我犹豫──<br>
+            　　我不能回头，运命驱策着我！<br>
+            　　我也知道这多半是走向<br>
+            　　毁灭的路，但<br>
+            　　为了你，为了你，<br>
+            　　我什么都甘愿；<br>
+            　　这不仅我的热情，<br>
+            　　我的仅有理性亦如此说。<br>
+            　　痴！想磔碎一个生命的纤维<br>
+            　　为要感动一个女人的心！<br>
+            　　想博得的，能博得的，至多是<br>
+            　　她的一滴泪，<br>
+            　　她的一声漠然的冷笑；<br>
+            　　但我也甘愿，即使<br>
+            　　我粉身的消息传给<br>
+            　　一块顽石，她把我看作<br>
+            　　一只地穴里的鼠，一条虫，<br>
+            　　我还是甘愿！<br>
+            　　痴到了真，是无条件的，<br>
+            　　上帝也无法调回一个<br>
+            　　痴定了的心如同一个将军<br>
+            　　有时调回已上死线的士兵。<br>
+            　　枉然，一切都是枉然，<br>
+            　　你的不来是不容否认的实在，<br>
+            　　虽则我心里烧着泼旺的火，<br>
+            　　饥渴着你的一切，<br>
+            　　你的发，你的笑，你的手脚；<br>
+            　　任何的痴想与祈祷<br>
+            　　不能缩短一小寸<br>
+            　　你我间的距离！<br>
+            　　户外的昏黄已然<br>
+            　　凝聚成夜的乌黑，<br>
+            　　树枝上挂着冰雪，<br>
+            　　鸟雀们典去了它们的啁啾，<br>
+            　　沉默是这一致穿孝的宇宙。<br>
+            　　钟上的针不断的比着<br>
+            　　玄妙的手势，像是指点，<br>
+            　　像是同情，像的嘲讽，<br>
+            　　每一次到点的打动，我听来是<br>
+            　　我自己的心的<br>
+            　　活埋的丧钟<br>
+            </div>
+        </div>
+        <div class="zeroui_dialog_ft woolen_glass">
+            <a href="javascript:;" class="zeroui_btn_dialog primary zeroui_btn zeroui_btn_primary zeroui_btn_inline">我知道了</a>
+        </div>
+    </div>
+</div>
+<!--END dialog3-->
 </script>
     <script type="text/html" id="tpl_progress">
 <div class="hd">
@@ -546,6 +663,8 @@
         <i class="zeroui_icon_success_circle"></i>
         <i class="zeroui_icon_success_no_circle"></i>
         <i class="zeroui_icon_info"></i>
+        <i class="zeroui_icon_solid_heart" style="color: #37B353;"></i>
+        <i class="zeroui_icon_empty_heart" style="color: #37B353;"></i>
         <i class="zeroui_icon_waiting"></i>
         <i class="zeroui_icon_waiting_circle"></i>
         <i class="zeroui_icon_circle"></i>
