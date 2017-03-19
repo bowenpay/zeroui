@@ -59,6 +59,11 @@ $(function () {
                 setTimeout(function () {
                     $('#loadingToast').hide();
                 }, 2000);
+            }).on('click', '#showMultiToast', function () {
+                $('#multi_toast').show();
+                setTimeout(function () {
+                    $('#multi_toast').hide();
+                }, 2000);
             });
         }
     };
