@@ -3,14 +3,14 @@ zeroui使用了@font-face技术,自己开发了一套字体。
 */
 
 @font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'zeroui';  /* project id 248017 */
-  src: url('//at.alicdn.com/t/font_6hkxnqz68si6n7b9.eot');
-  src: url('//at.alicdn.com/t/font_6hkxnqz68si6n7b9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_6hkxnqz68si6n7b9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_6hkxnqz68si6n7b9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_6hkxnqz68si6n7b9.svg#zeroui') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'zeroui';  /* project id 248017 */
+    src: url('//at.alicdn.com/t/font_bukbbmq65xzme7b9.eot');
+    src: url('//at.alicdn.com/t/font_bukbbmq65xzme7b9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_bukbbmq65xzme7b9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_bukbbmq65xzme7b9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_bukbbmq65xzme7b9.svg#zeroui') format('svg');
 }
 
 // 与bootstrap相同, zeroui的icon通常作为伪元素的方式嵌入
@@ -46,6 +46,8 @@ zeroui使用了@font-face技术,自己开发了一套字体。
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 // 规定css样式与font-face的对应关系
+.zeroui_icon_circle_left:before { content: "\e620" } /* '' */
+.zeroui_icon_circle_right:before { content: "\e61f" } /* '' */
 .zeroui_icon_arrow_left:before { content: "\e600" } /* '' */
 .zeroui_icon_arrow_right:before { content: "\e601" } /* '' */
 .zeroui_icon_arrow_down:before { content: "\e63d" } /* '' */
