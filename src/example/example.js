@@ -88,6 +88,10 @@ $(function () {
                 $('#dialog3').show().on('click', '.zeroui_btn_dialog', function () {
                     $('#dialog3').off('click').hide();
                 });
+            }).on('click', '#showDialog4', function () {
+                $('#dialog4').show().on('click', function () {
+                    $('#dialog4').off('click').hide();
+                });
             });
 
         }
