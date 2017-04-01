@@ -196,6 +196,19 @@ $(function () {
             return $('#tpl_panel').html();
         }
     };
+    // navtab
+    var navtab = {
+        url: '/navtab',
+        className: 'navtab',
+        render: function () {
+            return $('#tpl_navtab').html();
+        },
+        bind: function () {
+            $('#container').on('click', '.zeroui_navtab_item', function () {
+                $(this).addClass('zeroui_navtab_item_on').siblings('.zeroui_navtab_item_on').removeClass('zeroui_navtab_item_on');
+            });
+        }
+    };
 
     // tab
     var tab = {
@@ -290,6 +303,7 @@ $(function () {
         .push(actionsheet)
         .push(icons)
         .push(panel)
+        .push(navtab)
         .push(tab)
         .push(navbar)
         .push(tabbar)

@@ -1,0 +1,73 @@
+@import "../../base/fn";
+
+
+.zeroui_tab {         // zeroui_tab是container的直接子div, 占满整个屏幕
+    position: relative;
+    height: 100%;
+}
+
+.zeroui_tab_bd {              // tab body 中的内容
+    box-sizing: border-box;
+    height: 100%;               // 占满整屏
+    padding-bottom: 55px;       // 距离底部55px, 防止被底部导航tabbar覆盖
+    overflow: auto;             // 根据内容决定是否出现导航条
+    -webkit-overflow-scrolling: touch;  // 激发手机的touch滑动属性, 滑动更流畅
+}
+
+.zeroui_tab_bd_item {
+    display: none;
+}
+
+.zeroui_tab_bd_item_active {
+    display: block;
+}
+
+
+.zeroui_navtab {          // 顶部选项卡navtab
+    display: flex;          // 使用flex实现
+    position: absolute;
+    z-index: 500;
+    top: 0;                 // 显示在顶部
+    width: 100%;
+    background-color: #fafafa;  // 背景默认为浅灰色
+
+    &:after {                   // 都有bottomline, 保证navtab和下面的内容有分隔开
+        .setBottomLine(@globalBorderColor);
+    }
+
+    & + .zeroui_tab_bd {          //  内容区域, 距离上方40px, 防止被navtab遮住
+        padding-top: 40px;
+        padding-bottom: 0;
+    }
+}
+
+.zeroui_navtab_item {         // navtab 的每个选项卡
+    position: relative;
+    display: block;
+    flex: 1;                // flex:1, 表示均等平分
+    padding: 10px 0;        // 保证水平和垂直居中
+    text-align: center;
+    font-size: 15px;
+    color: #999;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active {              // 按下时变暗
+        background-color: #f2fffe;
+    }
+
+    &.zeroui_navtab_item_on {        // 当前被选中的比其它的背景色暗, 方便区分
+        color: #37b353;
+        font-weight: bold;
+        background-color: #f2fffe;
+    }
+
+    &:after {                   // 标签之间有一个右分割线
+        .setRightLine(#eee);
+    }
+
+    &:last-child {              // 防止最后一个出现分割线
+        &:after {
+            display: none;
+        }
+    }
+}
