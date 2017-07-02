@@ -1,0 +1,16 @@
+@import "../../base/fn";
+
+.zeroui_btn_plain_primary {
+    color: @zerouiBtnPrimaryBg;
+    border: 1px solid @zerouiBtnPrimaryBg;
+    button&, input& {
+        border-width: 1px;
+        background-color: transparent;
+    }
+    &:active {
+        border-color: @zerouiBtnPrimaryActiveBg;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
