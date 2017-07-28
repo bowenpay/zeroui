@@ -24,30 +24,32 @@
 
 
 .zeroui_navtab {          // 顶部选项卡navtab
-    display: flex;          // 使用flex实现
     position: absolute;
     z-index: 500;
     top: 0;                 // 显示在顶部
     width: 100%;
     background-color: #f2fffe;  // 背景默认为浅灰色
-
-    &:after {                   // 都有bottomline, 保证navtab和下面的内容有分隔开
-        .setBottomLine(@globalBorderColor);
-    }
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #BCBAB6;
+    // &:after {                   // 都有bottomline, 保证navtab和下面的内容有分隔开
+    //     .setBottomLine(@globalBorderColor);
+    // }
 
     & + .zeroui_tab_bd {          //  内容区域, 距离上方40px, 防止被navtab遮住
-        padding-top: 40px;
+        padding-top: 12vw;
         padding-bottom: 0;
     }
 }
 
 .zeroui_navtab_item {         // navtab 的每个选项卡
     position: relative;
-    display: block;
-    flex: 1;                // flex:1, 表示均等平分
-    padding: 10px 0;        // 保证水平和垂直居中
+    display: inline-block;
+    width: 32vw;
+    padding: 3vw 0;        // 保证水平和垂直居中
     text-align: center;
-    font-size: 15px;
+    font-size: 4vw;
     color: #999;
     -webkit-tap-highlight-color: transparent;
 
