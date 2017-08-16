@@ -1,0 +1,33 @@
+@import "../../../base/fn";
+
+.zeroui_cell_select {
+    .zeroui_select {
+        padding-right: 30px;
+    }
+    .zeroui_access_icon {
+
+    }
+    .zeroui_cell_bd{
+        &:after{
+            content: " ";
+            .setArrow_Wap(right, 6px, #C8C8CD, 2px);
+
+            position: absolute;
+            top: 50%;
+            right: @zerouiCellGapH;
+            margin-top: -3px;
+        }
+    }
+}
+
+.zeroui_select {
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 100%;
+    font-size: inherit;
+    position: relative;
+    z-index: 1;
+    padding-left: @zerouiCellGapH;
+}
