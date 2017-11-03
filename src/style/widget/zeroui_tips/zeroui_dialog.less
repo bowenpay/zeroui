@@ -84,6 +84,42 @@
     margin: 20px 15px 30px;
 }
 
+.zeroui_dialog_ft {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+    display: flex;
+    a {
+        display: block;
+        flex: 1;
+        color: @zerouiDialogLinkColor;
+        text-decoration: none;
+        .setTapColor;
+        &:active {
+            background-color: @zerouiDialogLinkActiveBc;
+        }
+    }
+    &:after {
+        content: " ";
+        .setTopLine(@zerouiDialogLineColor);
+    }
+    .zeroui_dialog_confirm & {
+        a {
+            position: relative;
+            &:after {
+                content: " ";
+                .setLeftLine(@zerouiDialogLineColor);
+            }
+            &:first-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 .zeroui_btn_dialog {              // default 和 primary 2 中类型的按钮颜色不同, 起引导作用
     &.default {
         width: 40%;
